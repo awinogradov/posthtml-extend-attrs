@@ -1,0 +1,31 @@
+{
+  "name": "posthtml-to-svg-attrs",
+  "version": "0.0.0",
+  "description": "Transform HTML attrs with CSS to SVG attrs",
+  "keywords": [],
+  "dependencies": {
+    "bem-naming": "^0.5.1",
+    "bluebird": "^2.9.27",
+    "traverse": "^0.6.6"
+  },
+  "peerDependencies": {},
+  "devDependencies": {
+    "jscs": "~1.4.5",
+    "jshint": "~2.5.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run jshint && npm run jscs",
+    "jshint": "node_modules/.bin/jshint .",
+    "jscs": "node_modules/.bin/jscs -c node_modules/enb-validate-code/jscs.json techs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/theprotein/posthtml-to-svg-attrs.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theprotein/posthtml-to-svg-attrs/issues"
+  },
+  "homepage": "https://github.com/theprotein/posthtml-to-svg-attrs"
+}
