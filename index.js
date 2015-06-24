@@ -9,7 +9,7 @@ module.exports = function transformHtmlAttrs(options) {
 
             this.node.tag && this.after(function() {
 
-                entity.attrs = opts.css[cssrulekey(this.node)];
+                entity.attrs = opts.cssObject[cssrulekey(this.node)];
 
                 this.update(entity);
             });
