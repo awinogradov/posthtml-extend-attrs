@@ -1,7 +1,7 @@
 {
-  "name": "posthtml-to-svg-attrs",
+  "name": "posthtml-extend-attrs",
   "version": "0.0.0",
-  "description": "Transform HTML attrs with CSS to SVG attrs",
+  "description": "Extend HTML attrs with CSS to SVG attrs",
   "keywords": [],
   "dependencies": {
     "bem-naming": "^0.5.1",
@@ -21,11 +21,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/theprotein/posthtml-to-svg-attrs.git"
+    "url": "git://github.com/theprotein/posthtml-extend-attrs.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/theprotein/posthtml-to-svg-attrs/issues"
+    "url": "https://github.com/theprotein/posthtml-extend-attrs/issues"
   },
-  "homepage": "https://github.com/theprotein/posthtml-to-svg-attrs"
+  "homepage": "https://github.com/theprotein/posthtml-extend-attrs"
 }
