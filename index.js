@@ -1,7 +1,7 @@
 var cssrulekey = require('./lib/cssrulekey.js'),
     traverse = require('traverse');
 
-module.exports = function transformHtmlAttrs(options) {
+module.exports = function extendAttrs(options) {
     var opts = options || {};
 
     return function(tree) {
@@ -9,7 +9,7 @@ module.exports = function transformHtmlAttrs(options) {
 
             this.node.tag && this.after(function() {
 
-                entity.attrs = opts.cssObject[cssrulekey(this.node)];
+                entity.attrs = opts.attrs[cssrulekey(this.node)];
 
                 this.update(entity);
             });
