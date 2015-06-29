@@ -5,9 +5,8 @@ PostHTMLExtendAttrs is plugin for [PostHTML](https://github.com/posthtml/posthtm
 ## Usage
 
 ``` javascript
-var posthtml = require('posthtml');
-    
-var html = '<div class="wow">OMG</div>';    
+var posthtml = require('posthtml'),
+	html = '<div class="wow">OMG</div>';    
 
 posthtml([ require('posthtml-extend-attrs')({
 	attrs: { id: 'wow_id' }
