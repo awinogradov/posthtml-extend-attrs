@@ -5,16 +5,18 @@ module.exports = function extendAttrs(options) {
     var opts = options || {};
 
     return function(tree) {
+
         traverse(tree).forEach(function(entity) {
 
-            this.node.tag && this.after(function() {
+            this.node.block && this.after(function() {
 
-                entity.attrs = opts.attrs[cssrulekey(this.node)];
+                // merge
+                entity.attrs = opts.attrsTree[cssrulekey(this.node)];
 
                 this.update(entity);
             });
         });
 
         return tree;
-    }
-}
+    };
+};
