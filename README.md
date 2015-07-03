@@ -6,15 +6,15 @@ PostHTMLExtendAttrs is plugin for [PostHTML](https://github.com/posthtml/posthtm
 
 ``` javascript
 var posthtml = require('posthtml'),
-	html = '<div class="wow">OMG</div>';    
+    html = '<div class="wow">OMG</div>';
 
 posthtml([ require('posthtml-extend-attrs')({
-	attrs: { id: 'wow_id' }
+    attrsTree: { '.wow' : { id: 'wow_id' }}
 })])
     .process(html)
     .then(function(result) {
         console.log(result);
     });
-    
+
 // <div class="wow" id="wow_id">OMG</div>
 ```
