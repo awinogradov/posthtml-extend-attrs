@@ -3,7 +3,7 @@ var objectAssign = require('object-assign');
 
 function getSelector(entity) {
     var seletor = '';
-    if (entity.attrs.class) {
+    if (entity.attrs && entity.attrs.class) {
         selector = '.' + entity.attrs.class;
     } else {
         selector = entity.tag;
@@ -22,7 +22,9 @@ module.exports = function extendAttrs(options) {
         return tree.walk(function(node) {
             if (node.tag) {
                 var nodeSelector = getSelector(node);
-                objectAssign(node.attrs, options.attrsTree[nodeSelector]);
+                node.attrs = objectAssign(
+                    {}, node.attrs || {}, options.attrsTree[nodeSelector]
+                );
             }
 
             return node;
