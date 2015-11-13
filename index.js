@@ -1,22 +1,31 @@
-var cssrulekey = require('./lib/cssrulekey.js'),
-    traverse = require('traverse');
+var objectAssign = require('object-assign');
+
+
+function getSelector(entity) {
+    var seletor = '';
+    if (entity.attrs.class) {
+        selector = '.' + entity.attrs.class;
+    } else {
+        selector = entity.tag;
+    }
+
+    return selector;
+}
+
 
 module.exports = function extendAttrs(options) {
-    var opts = options || {};
+    options = options || {};
+    options.attrsTree = options.attrsTree || {};
 
     return function(tree) {
 
-        traverse(tree).forEach(function(entity) {
+        return tree.walk(function(node) {
+            if (node.tag) {
+                var nodeSelector = getSelector(node);
+                objectAssign(node.attrs, options.attrsTree[nodeSelector]);
+            }
 
-            this.node.block && this.after(function() {
-
-                // merge
-                entity.attrs = opts.attrsTree[cssrulekey(this.node)];
-
-                this.update(entity);
-            });
+            return node;
         });
-
-        return tree;
     };
 };

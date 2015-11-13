@@ -2,19 +2,20 @@
   "name": "posthtml-extend-attrs",
   "version": "0.0.0",
   "description": "Extend HTML attrs with CSS to SVG attrs",
-  "keywords": ["posthtml"],
+  "keywords": [
+    "posthtml"
+  ],
   "dependencies": {
-    "bem-naming": "^0.5.1",
-    "traverse": "^0.6.6"
+    "object-assign": "^4.0.1"
   },
   "peerDependencies": {},
   "devDependencies": {
     "chai": "^3.0.0",
-    "jscs": "^1.13.1",
+    "jscs": "^2.5.1",
+    "jscs-protein": "git://github.com/theprotein/jscs-protein.git#1d22e08ca767958a95b79f3bad6449fb2fa9f496",
     "jshint": "^2.8.0",
     "mocha": "^2.2.5",
-    "posthtml": "0.0.2",
-    "jscs-protein": "git://github.com/theprotein/jscs-protein.git#1d22e08ca767958a95b79f3bad6449fb2fa9f496"
+    "posthtml": "^0.7.0"
   },
   "main": "index.js",
   "scripts": {
