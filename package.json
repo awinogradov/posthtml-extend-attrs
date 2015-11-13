@@ -6,7 +6,8 @@
     "posthtml"
   ],
   "dependencies": {
-    "object-assign": "^4.0.1"
+    "object-assign": "^4.0.1",
+    "posthtml-match-helper": "^1.0.1"
   },
   "peerDependencies": {},
   "devDependencies": {

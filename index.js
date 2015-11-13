@@ -1,33 +1,18 @@
 var objectAssign = require('object-assign');
+var matchHelper = require('posthtml-match-helper');
 
-
-function getSelector(entity) {
-    var seletor = '';
-    if (entity.attrs && entity.attrs.class) {
-        selector = '.' + entity.attrs.class;
-    } else {
-        selector = entity.tag;
-    }
-
-    return selector;
-}
-
-
-module.exports = function extendAttrs(options) {
+module.exports = function (options) {
     options = options || {};
     options.attrsTree = options.attrsTree || {};
 
-    return function(tree) {
-
-        return tree.walk(function(node) {
-            if (node.tag) {
-                var nodeSelector = getSelector(node);
-                node.attrs = objectAssign(
-                    {}, node.attrs || {}, options.attrsTree[nodeSelector]
-                );
-            }
-
-            return node;
+    return function extendAttrs(tree) {
+        var keys = Object.keys(options.attrsTree);
+        var matchers = keys.map(matchHelper);
+        keys.forEach(function(key, i) {
+            tree.match(matchers[i], function(node) {
+                node.attrs = objectAssign({}, node.attrs || {}, options.attrsTree[key]);
+                return node;
+            });
         });
     };
 };

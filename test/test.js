@@ -27,6 +27,18 @@ describe('Plugin', function() {
                 expect(html).to.eql(expectedHtml);
             });
     });
+
+    it('should process other match helper in keys', function () {
+        var attrsTree = { 'p#id': { id: 'wow' }},
+            html = '<div id="id">OMG</div><p id="id">block</p><div>OMG2</div>',
+            expectedHtml = '<div id="id">OMG</div><p id="wow">block</p>' +
+                           '<div>OMG2</div>';
+
+        return pluginProcess(attrsTree, html)
+            .then(function(html) {
+                expect(html).to.eql(expectedHtml);
+            });
+    });
 });
 
 
