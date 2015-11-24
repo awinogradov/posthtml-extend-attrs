@@ -1,6 +1,6 @@
 {
   "name": "posthtml-extend-attrs",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Extend HTML attrs with CSS to SVG attrs",
   "keywords": [
     "posthtml"
